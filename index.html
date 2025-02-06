@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-image: url('https://files.catbox.moe/hnpr2x.jpeg'); /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+      .login-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center; /* Center the content */
+        }
+
+        h2 {
+          margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 22px); /* Adjust width for padding */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%; /* Make the button full width */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+      <h2>POPKID LOGIN PAGE</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="redirectToGitHub()">TAP TO LOGIN</button>
+    </div>
+      
+     <audio controls autoplay>
+            <source src="https://files.catbox.moe/p216hu.m4a"> type="audio/mpeg"> </source>
+        </audio>
+      
+    <script>
+        function redirectToGitHub() {
+            // In a real application, you would validate username and password here.
+            // For this example, we're just redirecting regardless of input.
+
+            // Get the entered username and password (for demonstration purposes)
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // You could log the values or use them for some other client-side logic.
+            console.log("Username:", username);
+            console.log("Password:", password);
+
+            window.location.href = "https://popkidsessions-81385f9eef0e.herokuapp.com/"; // Replace with your GitHub username
+        }
+    </script>
+
+</body>
+</html>
