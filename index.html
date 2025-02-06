@@ -19,8 +19,8 @@
 
         .login-container {
             background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 8px;
+            padding: 50px;
+            border-radius: 25px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
@@ -33,16 +33,16 @@
         input[type="password"] {
             width: calc(100% - 22px);
             padding: 10px;
-            margin: 10px 0;
+            margin: 30px 0;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 20px;
             box-sizing: border-box;
         }
 
         button {
-            background-color: #4CAF50;
+            background-color: blue;
             color: white;
-            padding: 10px 15px;
+            padding: 20px 25px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -50,7 +50,7 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: red;
         }
 
         #music-player { /* Style for the music player */
@@ -62,7 +62,7 @@
 <body>
 
     <div class="login-container">
-      <h2>POPKID WEB</h2>
+      <h2>😇𝐏𝐎𝐏𝐊𝐈𝐃 𝐖𝐄𝐁𝐒𝐈𝐓𝐄😇</h2>
         <input type="text" id="username" placeholder="Username" required>
         <input type="password" id="password" placeholder="Password" required>
         <button onclick="redirectToGitHub()">Login</button>
@@ -71,6 +71,11 @@
             <audio id="myAudio" controls>
                 <source src="https://files.catbox.moe/p216hu.m4a" type="audio/mpeg">  Your browser does not support the audio element.
             </audio>
+            <div id="music-player">
+            <audio id="myAudio" controls>
+                <source src="https://files.catbox.moe/6tokxj.mp3" type="audio/mpeg">  Your browser does not support the audio element.
+            </audio>
+            
         </div>
     </div>
 
