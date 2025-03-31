@@ -3,105 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Popkid Xtech Pairing Site Login</title>
     <style>
         body {
-            font-family: sans-serif;
-            background-image: url('https://files.catbox.moe/hnpr2x.jpeg'); /* Replace with your image URL */
-            background-size: cover;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             margin: 0;
+            font-family: sans-serif;
+            overflow: hidden; /* Prevent scrollbars */
         }
 
-        .login-container {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 50px;
-            border-radius: 25px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        #header {
+            position: relative;
             text-align: center;
-        }
-
-        h2 {
-          margin-bottom: 20px;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin: 30px 0;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: blue;
             color: white;
-            padding: 20px 25px;
+            padding: 50px 0;
+            animation: fadeIn 2s ease-in-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #login-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            width: 300px;
+        }
+
+        #login-container input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        #login-container input:focus{
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        #login-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            width: 100%;
+            width: 95%;
         }
 
-        button:hover {
-            background-color: red;
+        #login-container button:hover {
+            background-color: #3e8e41;
         }
 
-        #music-player { /* Style for the music player */
-          margin-top: 20px;
+        #audio-player {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 8px;
         }
-
     </style>
 </head>
 <body>
 
-    <div class="login-container">
-      <h2>😇𝐏𝐎𝐏𝐊𝐈𝐃 𝐖𝐄𝐁𝐒𝐈𝐓𝐄😇</h2>
+    <video id="video-background" autoplay muted loop>
+        <source src="https://files.catbox.moe/lfpvpc.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div id="header">
+        <h1>Popkid Xtech Pairing Site</h1>
+    </div>
+
+    <div id="login-container">
+        <h2>POPKID SITE</h2>
         <input type="text" id="username" placeholder="Username" required>
         <input type="password" id="password" placeholder="Password" required>
-        <button onclick="redirectToGitHub()">Login</button>
+        <button onclick="login()">LOGIN</button>
+    </div>
 
-                <div class="social-media">
-            <h3>CONTACT POPKID VIA</h3>
-              <a href="https://x.com/IanTaracha3550?s=09"><img src="https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=000000" alt="Twitter"></a>
-            
-            
-            <a href="https://www.instagram.com/popkid_ke?igsh=MXVkOWhhbGdqenVkYw=="><img src="https://img.icons8.com/?size=100&id=ZRiAFreol5mE&format=png&color=000000" alt="Instagram"></a>
-        </div>
-        
-        <div id="music-player">
-            <audio id="myAudio" controls>
-                <source src="https://files.catbox.moe/p216hu.m4a" type="audio/mpeg">  Your browser does not support the audio element.
-            </audio>
-            <div id="music-player">
-            <audio id="myAudio" controls>
-                <source src="https://files.catbox.moe/6tokxj.mp3" type="audio/mpeg">  Your browser does not support the audio element.
-            </audio>
-            
-        </div>
+    <div id="audio-player">
+        <audio controls loop>
+            <source src="https://files.catbox.moe/kxdej4.m4a" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
     </div>
 
     <script>
-        function redirectToGitHub() {
+        function login() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            console.log("Username:", username);
-            console.log("Password:", password);
+            // Insecure login. Do not use in production.
+            //This allows any username and password to pass.
+            window.location.href = "https://sesssion-65d966ff6257.herokuapp.com/"; // Replace with your website URL
 
-            window.location.href = "https://sesssion-65d966ff6257.herokuapp.com/"; // Replace with your GitHub username
         }
-
-      // JavaScript to autoplay the music (optional - browser policies might prevent this)
-      const audio = document.getElementById("myAudio");
-      // audio.autoplay = true;  // Try to autoplay, but it might not work reliably
-      // audio.load(); // Important: Load the audio after setting autoplay
 
     </script>
 
