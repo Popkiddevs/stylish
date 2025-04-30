@@ -9,6 +9,7 @@
             margin: 0;
             font-family: sans-serif;
             overflow: hidden; /* Prevent scrollbars */
+            background-color: #ffccf2; /* Light pink background */
         }
 
         #video-background {
@@ -24,15 +25,25 @@
         #header {
             position: relative;
             text-align: center;
-            color: white;
+            color: #ff66b2; /* Bright pink text */
             padding: 50px 0;
-            animation: fadeIn 2s ease-in-out;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            animation: headerAnimation 3s ease-in-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Subtle shadow for readability */
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes headerAnimation {
+            0% {
+                transform: translateY(50px); /* Start from below */
+                opacity: 0; /* Start invisible */
+            }
+            50% {
+                transform: translateY(-10px); /* Move up slightly */
+                opacity: 0.6; /* Become semi-visible */
+            }
+            100% {
+                transform: translateY(0); /* End at normal position */
+                opacity: 1; /* Fully visible */
+            }
         }
 
         #login-container {
@@ -40,7 +51,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(255, 105, 180, 0.8); /* Light pink transparent background */
             padding: 20px;
             border-radius: 8px;
             color: white;
@@ -63,7 +74,7 @@
         }
 
         #login-container button {
-            background-color: #4CAF50;
+            background-color: #ff66b2; /* Bright pink button */
             color: white;
             padding: 10px 15px;
             border: none;
@@ -73,7 +84,7 @@
         }
 
         #login-container button:hover {
-            background-color: #3e8e41;
+            background-color: #ff3385; /* Darker pink on hover */
         }
 
         #audio-player {
@@ -81,7 +92,7 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(255, 105, 180, 0.8); /* Light pink transparent background */
             padding: 10px;
             border-radius: 8px;
         }
